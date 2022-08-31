@@ -1,0 +1,3 @@
+[submodule "board/cmumford-components"]
+	path = board/cmumford-components
+	url = git@github.com:cmumford/cmumford-components.git

@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name "cmumford")(type "KiCad")(uri "${CMUMFORD_COMPONENTS}/cmumford.pretty")(options "")(descr ""))
+)
