@@ -1163,7 +1163,6 @@
     )
   )
 
-
   (junction (at 44.45 41.91) (diameter 0) (color 0 0 0 0)
     (uuid 0b34aad7-97c2-4abc-a357-17f934e284c3)
   )
@@ -2329,7 +2328,7 @@
     (property "Value" "22µF" (id 1) (at 105.41 53.34 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (id 2) (at 113.9952 55.88 0)
+    (property "Footprint" "Capacitor_SMD:C_1206_3216Metric" (id 2) (at 113.9952 55.88 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 113.03 52.07 0)
@@ -2752,7 +2751,7 @@
     (property "Value" "22µF" (id 1) (at 127 53.3399 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (id 2) (at 124.1552 55.88 0)
+    (property "Footprint" "Capacitor_SMD:C_1206_3216Metric" (id 2) (at 124.1552 55.88 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 123.19 52.07 0)
@@ -2952,7 +2951,7 @@
     (property "Value" "10µF" (id 1) (at 52.07 53.3399 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (id 2) (at 49.2252 55.88 0)
+    (property "Footprint" "Capacitor_SMD:C_1206_3216Metric" (id 2) (at 49.2252 55.88 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 48.26 52.07 0)
@@ -3312,16 +3311,16 @@
       (reference "#PWR028") (unit 1) (value "GND") (footprint "")
     )
     (path "/d7d6c6c9-1fda-4dab-8786-779df910db4e"
-      (reference "C1") (unit 1) (value "10µF") (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (reference "C1") (unit 1) (value "10µF") (footprint "Capacitor_SMD:C_1206_3216Metric")
     )
     (path "/cda0317e-3a0c-49d7-a2c3-a3d5423dfa4d"
       (reference "C2") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/358be4dc-9ae7-42fb-bb5f-97253842315f"
-      (reference "C3") (unit 1) (value "22µF") (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (reference "C3") (unit 1) (value "22µF") (footprint "Capacitor_SMD:C_1206_3216Metric")
     )
     (path "/8da86106-0751-4439-acdd-3f37b2dbfba6"
-      (reference "C4") (unit 1) (value "22µF") (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (reference "C4") (unit 1) (value "22µF") (footprint "Capacitor_SMD:C_1206_3216Metric")
     )
     (path "/5fdabda6-9c9c-427b-87e5-a291030a9854"
       (reference "H1") (unit 1) (value "MountingHole") (footprint "MountingHole:MountingHole_2mm")
