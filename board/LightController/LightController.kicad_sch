@@ -2424,7 +2424,7 @@
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 4af9f695-9d31-47b7-9c1e-fff616a0e148)
     (property "Reference" "L1" (id 0) (at 102.87 38.1 90))
-    (property "Value" "8.7µH" (id 1) (at 102.87 40.64 90))
+    (property "Value" "8.2µH" (id 1) (at 102.87 40.64 90))
     (property "Footprint" "Inductor_SMD:L_1206_3216Metric" (id 2) (at 102.87 44.45 0)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -3347,7 +3347,7 @@
       (reference "J4") (unit 1) (value "Light Bank 3") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
     )
     (path "/4af9f695-9d31-47b7-9c1e-fff616a0e148"
-      (reference "L1") (unit 1) (value "8.7µH") (footprint "Inductor_SMD:L_1206_3216Metric")
+      (reference "L1") (unit 1) (value "8.2µH") (footprint "Inductor_SMD:L_1206_3216Metric")
     )
     (path "/d450be2c-5607-4e49-82b4-991878978321"
       (reference "R1") (unit 1) (value "3K3") (footprint "Resistor_SMD:R_0805_2012Metric")
