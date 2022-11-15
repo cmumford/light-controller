@@ -3,6 +3,9 @@ import neopixel
 import board, digitalio
 import feathers3
 
+from adafruit_ble import BLERadio
+from adafruit_ble.advertising.standard import ProvideServicesAdvertisement
+
 pins_ids_to_toggle = [
     board.D5,
     board.D6,
@@ -16,9 +19,12 @@ pins_ids_to_toggle = [
     board.D18,
 ]
 pins = []
+ble = None
+cycle_neopixel = False
 
 
 def InitPins():
+  """Initialize the light control pins."""
   global pins, pins_ids_to_toggle
   for pin_num in pins_ids_to_toggle:
     pin = digitalio.DigitalInOut(pin_num)
@@ -41,8 +47,16 @@ def InitNeoPixel():
   feathers3.set_ldo2_power(True)
 
 
+def InitBLE():
+  """Initialize Bluetooth Low Energy (BLE)"""
+  global ble
+
+  ble = BLERadio()
+
+
 def PrintBoardInfo():
-  # Say hello
+  """Print the Board info to the console."""
+
   print("\nHello from FeatherS3!")
   print("------------------\n")
 
@@ -63,12 +77,16 @@ def PrintBoardInfo():
 
 
 def Initialize():
+  """Initialize the application."""
+  global cycle_neopixel
   PrintBoardInfo()
   InitPins()
-  InitNeoPixel()
+  if cycle_neopixel:
+    InitNeoPixel()
 
 
 def ToggleLEDs():
+  """Toggle all light LED's"""
   global pins
 
   feathers3.led_blink()
@@ -82,10 +100,11 @@ Initialize()
 # Create a color wheel index int.
 color_index = 0
 while True:
-  # Get the R,G,B values of the next color
-  r, g, b = feathers3.rgb_color_wheel(color_index)
-  # Set the color on the NeoPixel
-  pixel[0] = (r, g, b, 0.5)
+  if cycle_neopixel:
+    # Get the R,G,B values of the next color
+    r, g, b = feathers3.rgb_color_wheel(color_index)
+    # Set the color on the NeoPixel
+    pixel[0] = (r, g, b, 0.5)
   # Increase the wheel index
   color_index += 1
 
