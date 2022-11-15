@@ -2,25 +2,23 @@ import time, gc, os
 import neopixel
 import board, digitalio
 import feathers3
-
-from adafruit_ble import BLERadio
-from adafruit_ble.advertising.standard import ProvideServicesAdvertisement
+import adafruit_logging as logging
 
 pins_ids_to_toggle = [
-    board.D5,
-    board.D6,
-    board.D9,
-    board.D10,
-    board.D11,
-    board.D14,
-    board.D15,
-    board.D16,
-    board.D17,
-    board.D18,
+    board.IO11, # Bank 1 Red
+    board.IO10, # Bank 1 Yellow
+    board.IO7,  # Bank 1 Green
+    board.IO3,  # Bank 1 Blue
+    board.D1,   # Bank 2 Red
+    board.IO38, # Bank 2 Orange
+    board.IO33, # Bank 2 Blue
+    board.IO9,  # Bank 3
+    board.IO8,  # Bank 3
+    board.IO35, # Bank 3 Green
 ]
 pins = []
-ble = None
-cycle_neopixel = False
+cycle_neopixel = True
+logger = None
 
 
 def InitPins():
@@ -47,13 +45,6 @@ def InitNeoPixel():
   feathers3.set_ldo2_power(True)
 
 
-def InitBLE():
-  """Initialize Bluetooth Low Energy (BLE)"""
-  global ble
-
-  ble = BLERadio()
-
-
 def PrintBoardInfo():
   """Print the Board info to the console."""
 
@@ -78,7 +69,11 @@ def PrintBoardInfo():
 
 def Initialize():
   """Initialize the application."""
-  global cycle_neopixel
+  global cycle_neopixel, logger
+
+  logger = logging.getLogger('test')
+  logger.setLevel(logging.INFO)
+
   PrintBoardInfo()
   InitPins()
   if cycle_neopixel:
@@ -87,7 +82,9 @@ def Initialize():
 
 def ToggleLEDs():
   """Toggle all light LED's"""
-  global pins
+  global pins, logger
+
+  logger.info('Toggling LEDs')
 
   feathers3.led_blink()
   for pin in pins:
@@ -96,8 +93,7 @@ def ToggleLEDs():
 
 Initialize()
 
-# Rainbow colors on the NeoPixel.
-# Create a color wheel index int.
+# Rainbow colors on the NeoPixel 0..255.
 color_index = 0
 while True:
   if cycle_neopixel:
